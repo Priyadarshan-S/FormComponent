@@ -1,5 +1,7 @@
 package main.java.com.yali.form.controller;
 
+import java.util.List;
+
 import com.zoho.yali.conf.YConfig;
 import com.zoho.yali.conf.YConfigFactory;
 import com.zoho.yali.ds.DSContext;
@@ -21,7 +23,7 @@ public class FormViewController extends ViewController{
     @Override
     public ViewModel getViewModel(ViewContext viewContext, DSContext arg1) throws ViewModelConstructionException {
         FormViewModel userConfig = new FormViewModel(viewContext,YConfigFactory.getConfig());
-
+        List<YConfig> uiControls = YConfigFactory.getConfig().getConfigList("uicontrols");
 
         return getFormViewModel(viewContext,userConfig);
     }
@@ -36,7 +38,9 @@ public class FormViewController extends ViewController{
             String fieldType = field.getString("fieldType");
             FieldChecks check = new FieldChecks();
             
-            
+            //if(fieldType.equals("Common"))
+
+
         });
         return model;
     }
