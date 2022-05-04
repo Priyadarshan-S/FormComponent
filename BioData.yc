@@ -17,9 +17,6 @@ view{
                     controller: "com.yali.form.controller.subcontroller.ChoiceFldViewController
                 }
             }
-
-            }
-
             ]
             title = "Bio Data"
             description = "Simple Bio Data Entry Form"
